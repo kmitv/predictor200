@@ -1,12 +1,26 @@
-<!-- 
-<ul>
-<li>{{ experience.salary }}</li>
-</ul> -->
 
-<!-- {{ experience.salary }} -->
-
-{% for exp in experience %}
-<li>{{ exp.salary }}</li>
+{% for exp in experience_list %}
+<li>#{{ exp.id }} ---> {{ exp.years }} years - {{ exp.salary }} PLN <form action="{% url 'howdy:data_remove' %}" method="POST"> {% csrf_token %} <input value="{{ exp.id }}" name="index" type="hidden"> <input type="submit" value="DELETE"/> </form> </li>
 {% endfor %}
 
-<!-- {{ xp_list }} -->
+<br/>
+<br/>
+<br/>
+
+Add entry: <br/> 
+<form action="{% url 'howdy:data_add' %}" method="POST">
+{% csrf_token %}
+Years: <input type="text" name="years"/><br/>
+Salary: <input type="text" name="salary"/><br/>
+<input type="submit" value="POST"/>
+</form>
+
+<br/>
+<br/>
+
+Delete entry: <br/>
+<form action="{% url 'howdy:data_remove' %}" method="POST">
+{% csrf_token %}
+Index: <input type="text" name="index"/><br/>
+<input type="submit" value="POST"/>
+</form>
