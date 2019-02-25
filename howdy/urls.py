@@ -6,5 +6,7 @@ app_name = 'howdy'
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path('data-add', views.data_add, name='data_add'),
-    path('data-remove', views.data_remove, name='data_remove')
+    path('data-remove', views.data_remove, name='data_remove'),
+    path('data-import', views.data_import, name='data_import'),
+    path('data-predict', views.data_predict, name='data_predict')
 ]
