@@ -44,12 +44,14 @@ Import dataset: <br/>
 <br/>
 <br/>
 
-{% comment %} Check your predicted salary: <br/>
-<form action="{% url 'howdy:data_remove' %}" method="POST">
+Check your predicted salary: <br/>
+<form action="{% url 'howdy:data_predict' %}" method="POST">
     {% csrf_token %}
     How many years of experience do you have?: <input type="text" name="pred_query"/><br/>
     <input type="submit" value="POST"/>
-</form> {% endcomment %}
+</form>
+
+{{ pred }}
 
 
 
