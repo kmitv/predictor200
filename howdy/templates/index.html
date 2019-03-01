@@ -1,22 +1,45 @@
- {% comment %} <img src="foo.png" alt="Italian Trulli"> {% endcomment %}
-
-{% comment %} <img src="{% static '/foobar.png' %}"/> {% endcomment %}
-
 {% load static %}
-<img src="{% static "howdy/foo.png" %}" alt="My image">
 
+<link rel="stylesheet" type="text/css" href="{% static 'howdy/style.css' %}">
+
+<div class="graphImg">
+
+    {% load static %}
+    <img src="{% static "howdy/foo.png" %}" alt="My image">
+
+</div>
+
+<div class="expList">
+
+<ul>
 {% for exp in experience_list %}
-    <li>#{{ exp.id }} ---> {{ exp.years }} years - {{ exp.salary }} PLN <form action="{% url 'howdy:data_remove' %}" method="POST"> {% csrf_token %} <input value="{{ exp.id }}" name="index" type="hidden"> <input type="submit" value="DELETE"/> </form> </li>
+    <li><form class="form-inline" action="" method="POST"> {% csrf_token %} <div class="li_el">#{{ exp.id }} ---> {{ exp.post }} post - {{ exp.salary }} PLN </div> <input value="{{ exp.id }}" name="index" type="hidden"> <input type="submit" value="DELETE"/> </form> </li>
 {% endfor %}
+</ul>
+
+</div>
 
 <br/>
 <br/>
 <br/>
 
 Add entry: <br/> 
-<form action="{% url 'howdy:data_add' %}" method="POST">
+<form method="POST">
     {% csrf_token %}
-    Years: <input type="text" name="years"/><br/>
+    Post:
+    <select name="post">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+    </br>
     Salary: <input type="text" name="salary"/><br/>
     <input type="submit" value="POST"/>
 </form>
@@ -25,7 +48,7 @@ Add entry: <br/>
 <br/>
 
 Delete entry: <br/>
-<form action="{% url 'howdy:data_remove' %}" method="POST">
+<form method="POST">
     {% csrf_token %}
     Index: <input type="text" name="index"/><br/>
     <input type="submit" value="POST"/>
@@ -35,7 +58,7 @@ Delete entry: <br/>
 <br/>
 
 Import dataset: <br/>
-<form action="{% url 'howdy:data_import' %}" method="POST"> 
+<form method="POST"> 
     {% csrf_token %} 
     <input type="hidden" name="import" value=0> 
     <input type="submit" value="IMPORT"/> 
@@ -45,7 +68,7 @@ Import dataset: <br/>
 <br/>
 
 Check your predicted salary: <br/>
-<form action="{% url 'howdy:data_predict' %}" method="POST">
+<form action="" method="POST">
     {% csrf_token %}
     How many years of experience do you have?: <input type="text" name="pred_query"/><br/>
     <input type="submit" value="POST"/>
