@@ -4,7 +4,7 @@ from . import views
 
 app_name = 'howdy'
 urlpatterns = [
-    # path('', views.index, name='index'),
+    path('', views.index, name='index'),
     # path('data-add', views.wju.data_add, name='data_add'),
     # path('data-remove', views.wju.data_remove, name='data_remove'),
     # path('data-import', views.wju.data_import, name='data_import'),
