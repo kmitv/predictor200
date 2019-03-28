@@ -20,6 +20,7 @@ import requests
 
 from django.http import HttpResponse
 
+from rest_framework.renderers import JSONRenderer
 
 
 def index(request):
@@ -142,3 +143,4 @@ class wju(View):
 class ExperienceListCreate(generics.ListCreateAPIView):
     queryset = Experience.objects.all()
     serializer_class = ExperienceSerializer
+    renderer_classes = (JSONRenderer, )
