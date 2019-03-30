@@ -143,4 +143,3 @@ class wju(View):
 class ExperienceListCreate(generics.ListCreateAPIView):
     queryset = Experience.objects.all()
     serializer_class = ExperienceSerializer
-    renderer_classes = (JSONRenderer, )
