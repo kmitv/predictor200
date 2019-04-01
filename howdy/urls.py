@@ -11,7 +11,6 @@ urlpatterns = [
     # path('data-predict', views.wju.data_predict, name='data_predict'),
     # path('', views.wju.as_view(), name='index'),
     path('api/exp/', views.ExperienceListCreate.as_view()),
-    path('api/exp/delete', views.ExperienceDelete.as_view()),
 
     path('api/exp/<int:pk>/delete/', views.ExperienceDelete.as_view()),
 
