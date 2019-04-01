@@ -4,4 +4,4 @@ from .models import Experience
 class ExperienceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Experience
-        fields = ('post', 'salary')
+        fields = ('id', 'post', 'salary')
