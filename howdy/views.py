@@ -22,6 +22,8 @@ from django.http import HttpResponse
 
 from rest_framework.renderers import JSONRenderer
 
+from rest_framework.response import Response
+
 
 def index(request):
     r = requests.get('http://httpbin.org/status/418')
@@ -143,3 +145,14 @@ class wju(View):
 class ExperienceListCreate(generics.ListCreateAPIView):
     queryset = Experience.objects.all()
     serializer_class = ExperienceSerializer
+
+class ExperienceDelete(generics.DestroyAPIView):
+        serializer_class = ExperienceSerializer
+
+        def get_queryset(self):
+                queryset = Experience.objects.filter(id=self.kwargs['pk'])
+                return queryset
+        
+        def destroy(self, request, *args, **kwargs):
+                instance = self.get_object()
+                self.perform_destroy(instance)
