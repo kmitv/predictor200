@@ -8,11 +8,8 @@ urlpatterns = [
     path('api/exp/', views.ExperienceListCreate.as_view()),
     path('api/exp/<int:pk>/delete/', views.ExperienceDelete.as_view()),
     path('api/exp/pics', views.PictureDisplay.as_view()),
-    path('api/exp/datainit', views.MyView.as_view()),
-]
+    path('api/exp/datainit', views.DataInitialization.as_view()),
+    path('api/exp/<int:pk>/pred', views.SalaryPrediction),
+    # path('api/exp/pred', views.SalaryPrediction),
 
-# # urls.py
-# urlpatterns = [
-#     url(r'^myview/$', MyView.as_view()),
-#     ...
-# ]
+]
