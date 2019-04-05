@@ -115,9 +115,11 @@ def SalaryPrediction(request, *args, **kwargs):
 
         queryset = str(kwargs['pk'])
 
+        predicted = queryset * 69
+
         # queryset = "5000"
 
-        return HttpResponse(queryset)
+        return HttpResponse(predicted)
 
         # def get_queryset(self):
         #         queryset = int(self.kwargs['pk'])
