@@ -115,7 +115,7 @@ def SalaryPrediction(request, *args, **kwargs):
 
         queryset = str(kwargs['pk'])
 
-        predicted = int(queryset) * 69
+        # predicted = int(queryset) * 69
 
         # queryset = "5000"
         post_list = [None] * Experience.objects.count()
@@ -162,7 +162,7 @@ def SalaryPrediction(request, *args, **kwargs):
 
         # predicted = int(queryset) * 69
 
-        predicted = poly_regressor.predict(regressor.fit_transform(int(queryset)))
+        predicted = poly_regressor.predict(regressor.fit_transform(int(queryset).reshape(-1,1)))
 
 
         # poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0)))
