@@ -162,6 +162,7 @@ def SalaryPrediction(request, *args, **kwargs):
         # predicted = int(queryset) * 69
 
         to_predict = []
+        to_predict = np.array(to_predict)
         to_predict.append(int(queryset))
 
         predicted = poly_regressor.predict(regressor.fit_transform(to_predict.reshape(-1,1)))
