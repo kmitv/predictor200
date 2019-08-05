@@ -151,7 +151,6 @@ def SalaryPrediction(request, *args, **kwargs):
         # Fitting Polynomial Regression to the dataset
         from sklearn.preprocessing import PolynomialFeatures
         regressor = PolynomialFeatures(degree = 4)
-        # regressor = PolynomialFeatures(degree = Experience.objects.count())
         X_poly = regressor.fit_transform(X)
         regressor.fit(X_poly, y)
 
@@ -162,7 +161,12 @@ def SalaryPrediction(request, *args, **kwargs):
 
         # predicted = int(queryset) * 69
 
-        predicted = poly_regressor.predict(regressor.fit_transform(int(queryset).reshape(-1,1)))
+        to_predict = []
+        to_predict.append(int(queryset))
+
+        predicted = poly_regressor.predict(regressor.fit_transform(to_predict.reshape(-1,1)))
+
+        to_predict = None
 
 
         # poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0)))
