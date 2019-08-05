@@ -118,6 +118,54 @@ def SalaryPrediction(request, *args, **kwargs):
         predicted = int(queryset) * 69
 
         # queryset = "5000"
+        post_list = [None] * Experience.objects.count()
+        salary_list = [None] * Experience.objects.count()  
+
+        exp_set = Experience.objects.filter(post__isnull=False)
+
+        list_increment = 0
+
+        for exp in exp_set:
+                post_list[list_increment] = float(exp.post)
+                salary_list[list_increment] = float(exp.salary)
+
+                list_increment=list_increment+1
+
+        global X
+        global y
+
+        X = np.array(post_list).reshape(-1,1)
+        y = np.array(salary_list).reshape(-1,1)
+                        
+        from sklearn.model_selection import train_test_split
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 1/3, random_state = 0)
+
+        # Fitting Linear Regression to the dataset
+        from sklearn.linear_model import LinearRegression
+
+        global regressor
+
+        regressor = LinearRegression()
+        regressor.fit(X_train, y_train)
+
+        # Fitting Polynomial Regression to the dataset
+        from sklearn.preprocessing import PolynomialFeatures
+        regressor = PolynomialFeatures(degree = 4)
+        # regressor = PolynomialFeatures(degree = Experience.objects.count())
+        X_poly = regressor.fit_transform(X)
+        regressor.fit(X_poly, y)
+
+        global poly_regressor
+
+        poly_regressor = LinearRegression()
+        poly_regressor.fit(X_poly, y)
+
+        # predicted = int(queryset) * 69
+
+        predicted = poly_regressor.predict(regressor.fit_transform(int(queryset))
+
+
+        # poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0)))
 
         return HttpResponse(str(predicted))
 
