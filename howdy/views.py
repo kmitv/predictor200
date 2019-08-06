@@ -90,8 +90,8 @@ def dataInit():
 
 
 
-        ax.scatter(X, y, color = '#72C2C2')
-        ax.plot(np.sort(X, axis=0), poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0))), color = '#516279')
+        ax.scatter(X, y, color = 'red')
+        ax.plot(np.sort(X, axis=0), poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0))), color = 'red')
         # plt.title('reg')
 
         ax.spines['bottom'].set_color('white')
@@ -103,6 +103,20 @@ def dataInit():
         ax.tick_params(axis='x', colors='white')
         ax.tick_params(axis='y', colors='white')
         ax.set_facecolor('#F5F9F9')
+
+        #         ax.scatter(X, y, color = '#72C2C2')
+        # ax.plot(np.sort(X, axis=0), poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0))), color = '#516279')
+        # # plt.title('reg')
+
+        # ax.spines['bottom'].set_color('white')
+        # ax.spines['top'].set_color('white')
+        # ax.spines['left'].set_color('white')
+        # ax.spines['right'].set_color('white')
+        # ax.xaxis.label.set_color('white')
+        # ax.yaxis.label.set_color('white')
+        # ax.tick_params(axis='x', colors='white')
+        # ax.tick_params(axis='y', colors='white')
+        # ax.set_facecolor('#F5F9F9')
 
 
 
