@@ -94,9 +94,11 @@ def dataInit():
         ax.plot(np.sort(X, axis=0), poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0))), color = 'blue')
         plt.title('reg')
 
-        ax.spines['bottom'].set_color('red')
-        ax.spines['top'].set_color('red')
-        ax.xaxis.label.set_color('red')
+        ax.spines['bottom'].set_color('white')
+        ax.spines['top'].set_color('white')
+        ax.spines['left'].set_color('white')
+        ax.spines['right'].set_color('white')
+        ax.xaxis.label.set_color('white')
         ax.tick_params(axis='x', colors='red')
 
         # label_y = plt.ylabel("y-label")
