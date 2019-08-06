@@ -130,7 +130,7 @@ CORS_ALLOW_CREDENTIALS = True
 
 CORS_ORIGIN_WHITELIST = (
     'localhost:4200',
-    'https://pred2kfront.herokuapp.com/'
+    'pred2kfront.herokuapp.com'
 )
 
 CSRF_TRUSTED_ORIGINS = [
