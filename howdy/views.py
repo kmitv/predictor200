@@ -82,7 +82,7 @@ def dataInit():
         fig = plt.figure()
 
         fig.patch.set_facecolor('blue')
-        fig.patch.set_alpha(1)
+        fig.patch.set_alpha(0)
 
 
         ax = fig.add_subplot(111)
