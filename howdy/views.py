@@ -90,8 +90,8 @@ def dataInit():
 
 
 
-        ax.scatter(X, y, color = 'red')
-        ax.plot(np.sort(X, axis=0), poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0))), color = 'blue')
+        ax.scatter(X, y, color = '#C47677')
+        ax.plot(np.sort(X, axis=0), poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0))), color = '#72C2C2')
         # plt.title('reg')
 
         ax.spines['bottom'].set_color('white')
@@ -109,7 +109,7 @@ def dataInit():
         # label_y.set_color("red")
 
 
-        plt.xlabel('level')
+        plt.xlabel('Level')
         plt.ylabel('Salary')
         plt.savefig('howdy/static/howdy/foo.png')
 
