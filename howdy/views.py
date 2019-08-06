@@ -82,7 +82,7 @@ def dataInit():
         fig = plt.figure()
 
         fig.patch.set_facecolor('blue')
-        fig.patch.set_alpha(0.7)
+        fig.patch.set_alpha(1)
 
 
         ax = fig.add_subplot(111)
@@ -102,7 +102,7 @@ def dataInit():
         ax.yaxis.label.set_color('white')
         ax.tick_params(axis='x', colors='white')
         ax.tick_params(axis='y', colors='white')
-        ax.set_facecolor('#eafff5')
+        ax.set_facecolor('#ECA694')
 
 
         # label_y = plt.ylabel("y-label")
