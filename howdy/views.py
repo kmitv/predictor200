@@ -83,7 +83,7 @@ def dataInit():
         plt.plot(np.sort(X, axis=0), poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0))), color = 'blue')
         plt.title('reg')
 
-        plt.style.use('dark_background')
+        plt.style.use('ggplot')
         plt.rcParams['axes.facecolor'] = 'g'
         plt.rcParams['savefig.facecolor'] = 'b'
 
