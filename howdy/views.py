@@ -92,14 +92,18 @@ def dataInit():
 
         ax.scatter(X, y, color = 'red')
         ax.plot(np.sort(X, axis=0), poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0))), color = 'blue')
-        plt.title('reg')
+        # plt.title('reg')
 
         ax.spines['bottom'].set_color('white')
         ax.spines['top'].set_color('white')
         ax.spines['left'].set_color('white')
         ax.spines['right'].set_color('white')
         ax.xaxis.label.set_color('white')
-        ax.tick_params(axis='x', colors='red')
+        ax.yaxis.label.set_color('white')
+        ax.tick_params(axis='x', colors='white')
+        ax.tick_params(axis='y', colors='white')
+        ax.facecolor('black')
+
 
         # label_y = plt.ylabel("y-label")
         # label_y.set_color("red")
