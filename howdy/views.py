@@ -115,39 +115,6 @@ def dataInit():
         plt.ylabel('Salary')
         plt.savefig('howdy/static/howdy/foo.png')
 
-
-
-
-
-
-        #         poly_regressor = LinearRegression()
-        # poly_regressor.fit(X_poly, y)
-
-        # plt.clf()
-
-        # fig = plt.figure()
-
-        # fig.patch.set_facecolor('blue')
-        # fig.patch.set_alpha(0.7)
-
-
-        # ax = fig.add_subplot(111)
-
-
-
-
-        # plt.scatter(X, y, color = 'red')
-        # plt.plot(np.sort(X, axis=0), poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0))), color = 'blue')
-        # plt.title('reg')
-
-        # # label_y = plt.ylabel("y-label")
-        # # label_y.set_color("red")
-
-
-        # plt.xlabel('level')
-        # plt.ylabel('Salary')
-        # plt.savefig('howdy/static/howdy/foo.png', transparent=True)
-
 class ExperienceListCreate(generics.ListCreateAPIView):
     queryset = Experience.objects.all()
     serializer_class = ExperienceSerializer
