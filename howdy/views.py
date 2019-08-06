@@ -111,7 +111,7 @@ def dataInit():
 
         plt.xlabel('level')
         plt.ylabel('Salary')
-        plt.savefig('howdy/static/howdy/foo.png', transparent=True)
+        plt.savefig('howdy/static/howdy/foo.png')
 
 
 
