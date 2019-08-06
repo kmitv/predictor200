@@ -92,6 +92,10 @@ def dataInit():
         label_y = plt.ylabel("y-label")
         label_y.set_color("red")
 
+        fig, ax = plt.subplots(facecolor=(.18, .31, .31))
+        # 2) hex string:
+        ax.set_facecolor('#eafff5')
+
 
         plt.xlabel('level')
         plt.ylabel('Salary')
