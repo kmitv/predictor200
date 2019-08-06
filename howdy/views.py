@@ -85,21 +85,60 @@ def dataInit():
         fig.patch.set_alpha(0.7)
 
 
-        plt.scatter(X, y, color = 'red')
-        plt.plot(np.sort(X, axis=0), poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0))), color = 'blue')
+        ax = fig.add_subplot(111)
+
+
+
+
+        ax.scatter(X, y, color = 'red')
+        ax.plot(np.sort(X, axis=0), poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0))), color = 'blue')
         plt.title('reg')
 
-        label_y = plt.ylabel("y-label")
-        label_y.set_color("red")
+        ax.spines['bottom'].set_color('red')
+        ax.spines['top'].set_color('red')
+        ax.xaxis.label.set_color('red')
+        ax.tick_params(axis='x', colors='red')
 
-        fig, ax = plt.subplots(facecolor=(.18, .31, .31))
-        # 2) hex string:
-        ax.set_facecolor('#eafff5')
+        # label_y = plt.ylabel("y-label")
+        # label_y.set_color("red")
 
 
         plt.xlabel('level')
         plt.ylabel('Salary')
         plt.savefig('howdy/static/howdy/foo.png', transparent=True)
+
+
+
+
+
+
+        #         poly_regressor = LinearRegression()
+        # poly_regressor.fit(X_poly, y)
+
+        # plt.clf()
+
+        # fig = plt.figure()
+
+        # fig.patch.set_facecolor('blue')
+        # fig.patch.set_alpha(0.7)
+
+
+        # ax = fig.add_subplot(111)
+
+
+
+
+        # plt.scatter(X, y, color = 'red')
+        # plt.plot(np.sort(X, axis=0), poly_regressor.predict(regressor.fit_transform(np.sort(X, axis=0))), color = 'blue')
+        # plt.title('reg')
+
+        # # label_y = plt.ylabel("y-label")
+        # # label_y.set_color("red")
+
+
+        # plt.xlabel('level')
+        # plt.ylabel('Salary')
+        # plt.savefig('howdy/static/howdy/foo.png', transparent=True)
 
 class ExperienceListCreate(generics.ListCreateAPIView):
     queryset = Experience.objects.all()
