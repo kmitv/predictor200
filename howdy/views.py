@@ -144,6 +144,9 @@ def SalaryPrediction(request, *args, **kwargs):
 
         queryset = str(kwargs['pk'])
 
+        print(queryset)
+
+        print(kwargs['pk'])
         # predicted = int(queryset) * 69
 
         # queryset = "5000"
