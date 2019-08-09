@@ -9,7 +9,7 @@ urlpatterns = [
     path('api/exp/<int:pk>/delete/', views.ExperienceDelete.as_view()),
     path('api/exp/pics', views.PictureDisplay.as_view()),
     path('api/exp/datainit', views.DataInitialization.as_view()),
-    path('api/exp/<int:pk>/pred', views.SalaryPrediction),
+    path('api/exp/<pk>/pred', views.SalaryPrediction),
     # path('api/exp/pred', views.SalaryPrediction),
 
 ]
