@@ -142,6 +142,8 @@ class DataInitialization(APIView):
 def SalaryPrediction(request, *args, **kwargs):
         # queryset = int(self.kwargs['pk'])
 
+        print(queryset)
+
         queryset = str(kwargs['pk'])
 
         print(queryset)
